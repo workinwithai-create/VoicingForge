@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoicingForge — Live Chord Voicing Desk</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #111; color: #eee; margin: 2rem; }
+    h1 { color: #4ade80; }
+    button, input, select { padding: 0.5rem; margin: 0.25rem; background: #222; color: #eee; border: 1px solid #444; }
+    .chairs { display: flex; gap: 1rem; }
+    .chair { border: 1px solid #444; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>VoicingForge</h1>
+  <p>Live piano / EP chord voicing desk. Your chords and BPM first. Grid-perfect exports.</p>
+  <div id="tap-start">Tap to start audio</div>
+  <div>
+    BPM: <input type="number" id="bpm" value="120" min="60" max="180">
+    Key: <select id="key"><option>Am</option><option>C</option><option>G</option><option>F</option></select>
+    Chords: <input type="text" id="chords" value="Am F C G" placeholder="Am F C G">
+  </div>
+  <div class="chairs">
+    <div class="chair">Piano <button class="mute">Mute</button></div>
+    <div class="chair">EP <button class="mute">Mute</button></div>
+    <div class="chair">Arp <button class="mute">Mute</button></div>
+  </div>
+  <button id="play">Play</button> <button id="stop">Stop</button>
+  <button id="export-wav">Export WAV</button> <button id="export-mid">Export MIDI</button>
+  <p>Hardware MIDI keyboard supported. On-screen keys fallback.</p>
+  <p>iOS: silent switch mutes Web Audio.</p>
+  <script src="app.js"></script>
+</body>
+</html>
